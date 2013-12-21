@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="nl.nickmeessen.ghostbeam"
+          android:versionCode="2"
+          android:versionName="1.1.0">
+
+    <application android:icon="@drawable/ghost128" android:label="@string/app_name">
+        <receiver android:name=".GhostBeamProvider" android:label="@string/app_name">
+
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+                <action android:name="nl.nickmeessen.ghostbeam.BEAM"></action>
+                <action android:name="nl.nickmeessen.ghostbeam.BOOM"></action>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-sdk android:minSdkVersion="3" />
+
+</manifest>
